@@ -1,0 +1,11 @@
+.bottom-left{
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+}
+
+.main{
+    position: relative;
+  text-align: center;
+  color: white;
+}
