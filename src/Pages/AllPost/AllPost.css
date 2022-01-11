@@ -1,0 +1,33 @@
+.card-Footer{
+    display:flex;
+
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-Footer p{
+    padding-top: 11px;
+    padding-left: 10px;
+}
+
+.space{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.shareBg{
+    background-color: #EDEEF0;
+    font-size: 18;
+    padding: 8px;
+}
+
+.viewStyle{
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.writing{
+    display: flex;
+    justify-content: space-between;
+}
