@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Event = () => {
-    return (
-        <div>
-            <h1>event here</h1>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Coming soon</h1>
+    </div>
+  );
 };
 
 export default Event;

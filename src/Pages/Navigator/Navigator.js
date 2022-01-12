@@ -11,15 +11,15 @@ const Navigator = () => {
             <div className="menu">
               <Link to="/allPost">All Posts</Link>
               <Link className="" to="/article">
-                Active
+                Article
               </Link>
-              <Link className="" to="#">
+              <Link className="" to="/event">
                 Event
               </Link>
-              <Link className="" to="#">
+              <Link className="" to="/education">
                 Education
               </Link>
-              <Link className="" to="#">
+              <Link className="" to="/job">
                 Jobs
               </Link>
             </div>

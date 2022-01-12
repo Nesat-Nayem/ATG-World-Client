@@ -65,7 +65,7 @@ const Navbar = () => {
               <input
                 className="form-control "
                 type="search"
-                placeholder="Search your favarite group in ATG"
+                placeholder="Search"
                 aria-label="Search"
               />
             </form>
