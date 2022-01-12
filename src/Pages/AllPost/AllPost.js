@@ -5,7 +5,6 @@ const AllPost = () => {
     <div className="container">
       <div className="row">
         <div className="col-md-8">
-
           <div className="card">
             <img
               src="https://i.ibb.co/GdLksxD/Rectangle-5.png"
@@ -13,10 +12,16 @@ const AllPost = () => {
               alt="..."
             />
             <div className="card-body">
-               <div className="writing">
-               <img className="" src="https://i.ibb.co/Hh2bq49/Article.png" alt=""/>
-               <p><i className="fas fa-ellipsis-h"></i></p>
-               </div>
+              <div className="writing">
+                <img
+                  className=""
+                  src="https://i.ibb.co/Hh2bq49/Article.png"
+                  alt=""
+                />
+                <p>
+                  <i className="fas fa-ellipsis-h"></i>
+                </p>
+              </div>
               <h5 className="card-title">
                 What if famous brands had regular fonts? Meet RegulaBrands!
               </h5>
@@ -35,7 +40,7 @@ const AllPost = () => {
                   <i className="fas fa-eye"></i> 1.4k views
                 </p>
                 <h4 className="">
-                <i className="fas fa-share-alt shareBg"></i>
+                  <i className="fas fa-share-alt shareBg"></i>
                 </h4>
               </div>
             </div>
@@ -47,10 +52,16 @@ const AllPost = () => {
               alt="..."
             />
             <div className="card-body">
-               <div className="writing">
-               <img className="" src="https://i.ibb.co/Hh2bq49/Article.png" alt=""/>
-               <p><i className="fas fa-ellipsis-h"></i></p>
-               </div>
+              <div className="writing">
+                <img
+                  className=""
+                  src="https://i.ibb.co/Hh2bq49/Article.png"
+                  alt=""
+                />
+                <p>
+                  <i className="fas fa-ellipsis-h"></i>
+                </p>
+              </div>
               <h5 className="card-title">
                 What if famous brands had regular fonts? Meet RegulaBrands!
               </h5>
@@ -69,14 +80,11 @@ const AllPost = () => {
                   <i className="fas fa-eye"></i> 1.4k views
                 </p>
                 <h4 className="">
-                <i className="fas fa-share-alt shareBg"></i>
+                  <i className="fas fa-share-alt shareBg"></i>
                 </h4>
               </div>
             </div>
           </div>
-
-
-         
         </div>
         <div className="col-md-4">
           <h1>this is</h1>

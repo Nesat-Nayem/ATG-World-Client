@@ -1,7 +1,5 @@
 import React from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import AllPost from "../AllPost/AllPost";
-import Article from "../Article/Article";
+import { Link } from "react-router-dom";
 
 import "./Navigator.css";
 const Navigator = () => {
@@ -11,11 +9,7 @@ const Navigator = () => {
         <div className="col-md-8">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="menu">
-              <Link  to='/allPost'>
-           
-               All Posts
-             
-              </Link>
+              <Link to="/allPost">All Posts</Link>
               <Link className="" to="/article">
                 Active
               </Link>
@@ -28,11 +22,6 @@ const Navigator = () => {
               <Link className="" to="#">
                 Jobs
               </Link>
-
-              {/* <Routes>
-                <Route path="/article" element={<Article />} />
-                <Route path="/allPost" element={<AllPost />} />
-              </Routes> */}
             </div>
           </nav>
         </div>

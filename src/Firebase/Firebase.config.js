@@ -4,6 +4,6 @@ const firebaseConfig = {
   projectId: "atg-world-e4078",
   storageBucket: "atg-world-e4078.appspot.com",
   messagingSenderId: "888726928349",
-  appId: "1:888726928349:web:9d45e621441d7ccf705434"
+  appId: "1:888726928349:web:9d45e621441d7ccf705434",
 };
-export default firebaseConfig
+export default firebaseConfig;

@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../img/logo.png";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import initializeAuthentication from "../../Firebase/firebase.insialize";
-// import UseAuth from "../../Context/UseAuth";
 
 const Navbar = () => {
-  initializeAuthentication()
+  initializeAuthentication();
   const provider = new GoogleAuthProvider();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,11 +24,10 @@ const Navbar = () => {
     });
   };
   const auth = getAuth();
-  createUserWithEmailAndPassword(auth,email, password)
-  .then(res=>{
-    const user = res.user
+  createUserWithEmailAndPassword(auth, email, password).then((res) => {
+    const user = res.user;
     console.log(user);
-  })
+  });
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, email, password);
@@ -45,9 +48,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <img src={logo} alt="" />
-          {/* <a className="navbar-brand" href="#">
-            Navbar
-          </a> */}
+
           <button
             className="navbar-toggler"
             type="button"
@@ -67,21 +68,16 @@ const Navbar = () => {
                 placeholder="Search your favarite group in ATG"
                 aria-label="Search"
               />
-              {/* <button className="btn btn-outline-success" type="submit">
-                Search
-              </button> */}
             </form>
 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
                   Create account{" "}
-                  
                 </a>
               </li>
             </ul>
 
-            {/* modal */}
             <button
               type="text"
               class="btn"
@@ -175,7 +171,6 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            {/* modal */}
           </div>
         </div>
       </nav>

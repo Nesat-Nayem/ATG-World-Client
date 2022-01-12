@@ -1,19 +1,8 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
-
-// import initializeAuthentication from "../Firebase/firebase.insialize";
-
-// initializeAuthentication()
-
-// const creteUserWithPassword = createUserWithEmailAndPassword(auth, email, password)
-
-const provider = new GoogleAuthProvider();
+import { getAuth, signInWithPopup } from "firebase/auth";
 
 const auth = getAuth();
 
 export default {
-    auth,
-    signInWithPopup,
-    provider,
-    // creteUserWithPassword
-}
+  auth,
+  signInWithPopup,
+};
