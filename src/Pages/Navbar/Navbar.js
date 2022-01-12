@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../img/logo.png";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from "firebase/auth";
+import initializeAuthentication from "../../Firebase/firebase.insialize";
+// import UseAuth from "../../Context/UseAuth";
 
 const Navbar = () => {
+  initializeAuthentication()
+  const provider = new GoogleAuthProvider();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signInWithGoogle = () => {
+    const auth = getAuth();
+    signInWithPopup(auth, provider).then((res) => {
+      const user = res.user;
+      console.log(user);
+    });
+  };
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth,email, password)
+  .then(res=>{
+    const user = res.user
+    console.log(user);
+  })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, email, password);
+  };
+
+  const nameChange = (e) => {
+    setName(e.target.value);
+  };
+  const changePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const emailChange = (e) => {
+    setEmail(e.target.value);
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,10 +76,106 @@ const Navbar = () => {
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
                   Create account{" "}
-                  <strong className="text-green">It's free</strong>
+                  
                 </a>
               </li>
             </ul>
+
+            {/* modal */}
+            <button
+              type="text"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              data-bs-whatever="@mdo"
+            >
+              It's free
+            </button>
+
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Login Form
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form onSubmit={handleSubmit}>
+                      <div class="mb-3">
+                        <label for="name" class="Name">
+                          Name:
+                        </label>
+                        <input
+                          type="name"
+                          class="form-control"
+                          onBlur={nameChange}
+                          id="Name"
+                          required="true"
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="email" class="Email">
+                          Email:
+                        </label>
+
+                        <input
+                          type="email"
+                          class="form-control"
+                          onBlur={emailChange}
+                          id="Email"
+                          required="true"
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="password" class="password">
+                          Password:
+                        </label>
+                        <input
+                          type="password"
+                          onBlur={changePassword}
+                          class="form-control"
+                          id="Password"
+                          required
+                        />
+                        <input
+                          className="submit-btn btn btn-danger mt-3"
+                          type="submit"
+                          value="Log In"
+                        />
+                      </div>
+                    </form>
+                    <button onClick={signInWithGoogle}>
+                      sign in with google
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* modal */}
           </div>
         </div>
       </nav>
