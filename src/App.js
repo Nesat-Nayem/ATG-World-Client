@@ -10,6 +10,8 @@ import Article from "./Pages/Article/Article";
 import Event from "./Pages/Event/Event";
 import Job from "./Pages/Job/Job";
 import CreatePost from "./Pages/CreatePost/CreatePost";
+import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
+import Education from "./Pages/Education/Education";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <Route path="/article" element={<Article />} />
           <Route path="/event" element={<Event />} />
           <Route path="/job" element={<Job />} />
-          <Route path="/createPost" element={<CreatePost />} />
+          <Route path="/education" element={<Education />} />
+
+          <Route path="/createPost" element={<PrivateRoute> <CreatePost /> </PrivateRoute> } />
         </Routes>
       </BrowserRouter>
       </AuthProvider>
