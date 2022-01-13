@@ -1,21 +1,16 @@
 import React from "react";
-// import from from "./CreatePost.css";
 import { useForm } from "react-hook-form";
-import useFirebase from "../../hooks/useFirebase";
-
 const CreatePost = () => {
-  const { user } = useFirebase();
   const {
     register,
     handleSubmit,
     reset,
-    watch,
-
+    
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addPost", {
+    fetch("https://secret-castle-49313.herokuapp.com/addPost", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -36,28 +31,39 @@ const CreatePost = () => {
           <div className=" ">
             <div className="">
               <form onSubmit={handleSubmit(onSubmit)}>
-                <input
-                  {...register("name")}
-                  placeholder="Name"
-                  className="p-2 m-2 w-100 input-field"
-                />
 
-                <input
-                  {...register("description")}
-                  placeholder="Description"
-                  className="p-2 m-2 w-100 input-field"
-                />
-
-                <input
-                  {...register("image", { required: true })}
+              <input
+                  {...register("img", { required: true })}
                   placeholder="Image Link"
                   className="p-2 m-2 w-100 input-field"
                 />
 
                 <input
-                  {...register("price", { required: true })}
-                  placeholder="Price"
-                  type="number"
+                  {...register("Title")}
+                  placeholder="Title"
+                  className="p-2 m-2 w-100 input-field"
+                />
+
+                <input
+                  {...register("Description")}
+                  placeholder="Description"
+                  className="p-2 m-2 w-100 input-field"
+                />
+
+               
+
+                <input
+                  {...register("manImg", { required: true })}
+                  placeholder="Writer Img"
+                  
+                  className="p-2 m-2 w-100 input-field"
+                />
+
+              
+                <input
+                  {...register("name", { required: true })}
+                  placeholder="Writer Name"
+                  
                   className="p-2 m-2 w-100 input-field"
                 />
 

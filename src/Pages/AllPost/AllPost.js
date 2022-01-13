@@ -3,7 +3,7 @@ import "./AllPost.css";
 const AllPost = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allPost")
+    fetch("https://secret-castle-49313.herokuapp.com/allPost")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
