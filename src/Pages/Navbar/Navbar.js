@@ -61,7 +61,7 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <form className="d-flex  ms-auto form_style">
+            <form className="d-flex  ms-auto searchBar form_style">
               <input
                 className="form-control "
                 type="search"
@@ -110,7 +110,7 @@ const Navbar = () => {
                   </div>
                   <div class="modal-body">
                     <form onSubmit={handleSubmit}>
-                      <div class="mb-3">
+                      {/* <div class="mb-3">
                         <label for="name" class="Name">
                           Name:
                         </label>
@@ -121,7 +121,7 @@ const Navbar = () => {
                           id="Name"
                           required="true"
                         />
-                      </div>
+                      </div> */}
 
                       <div class="mb-3">
                         <label for="email" class="Email">
@@ -155,8 +155,13 @@ const Navbar = () => {
                         />
                       </div>
                     </form>
-                    <button onClick={signInWithGoogle}>
-                      sign in with google
+
+                    <h5 className="my-3">---------OR---------</h5>
+                    <button className="buttonStyle" onClick={signInWithGoogle}>
+                    <i class="fab fa-google color"></i> Sign In With Google
+                    </button>
+                    <button className="buttonStyle">
+                    <i class="fab fa-facebook-f colorF"></i>  Sign In With Facebook
                     </button>
                   </div>
                   <div class="modal-footer">

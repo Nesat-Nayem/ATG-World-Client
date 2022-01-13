@@ -72,7 +72,7 @@ const AllPost = () => {
             </div>
             <div className="d-flex justify-content-between space">
               <div className="card-Footer">
-                <img src="https://i.ibb.co/W2QkYZt/Rectangle-3-1.png" alt="" />
+                <img src="https://i.ibb.co/VHbghdP/Rectangle-3-4.png" alt="" />
                 <p>Sarthak Kamra</p>
               </div>
               <div className="d-flex">
@@ -112,7 +112,7 @@ const AllPost = () => {
             </div>
             <div className="d-flex justify-content-between space">
               <div className="card-Footer">
-                <img src="https://i.ibb.co/W2QkYZt/Rectangle-3-1.png" alt="" />
+                <img src="https://i.ibb.co/VM6nqjC/Rectangle-3-3.png" alt="" />
                 <p>Sarthak Kamra</p>
               </div>
               <div className="d-flex">

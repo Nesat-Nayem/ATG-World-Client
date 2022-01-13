@@ -1,3 +1,16 @@
 .form_style{
     width: auto!;
 }
+
+.buttonStyle{
+    border: none;
+    padding: 5px;
+    margin-right: 5px;
+   
+}
+.color{
+    color: rgb(14, 202, 39);
+}
+.colorF{
+    color: rgb(226, 51, 203);
+}
