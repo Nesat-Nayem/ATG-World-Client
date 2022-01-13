@@ -28,7 +28,7 @@ const Navigator = () => {
 
         <div className="col-md-4">
           <div>
-            <button className="btn">Write a post</button>
+            <Link to="/createPost" className="btn">Write a post</Link>
             <button className="btn">Create Group</button>
           </div>
         </div>

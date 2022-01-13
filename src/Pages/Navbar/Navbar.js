@@ -1,33 +1,23 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../img/logo.png";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
-import initializeAuthentication from "../../Firebase/firebase.insialize";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
-  initializeAuthentication();
-  const provider = new GoogleAuthProvider();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signInWithGoogle = () => {
-    const auth = getAuth();
-    signInWithPopup(auth, provider).then((res) => {
-      const user = res.user;
-      console.log(user);
-    });
+  const { handleGoogleLogin, handleLogout, user } = useAuth();
+
+  const clickTologout = () => {
+    handleLogout();
   };
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password).then((res) => {
-    const user = res.user;
-    console.log(user);
-  });
+
+  const SignInwithPopup = () => {
+    handleGoogleLogin();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, email, password);
@@ -71,6 +61,7 @@ const Navbar = () => {
             </form>
 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <p>{user.email}</p>
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
                   Create account{" "}
@@ -153,15 +144,23 @@ const Navbar = () => {
                           type="submit"
                           value="Log In"
                         />
+
+                        <input
+                          className="submit-btn btn btn-danger mt-3"
+                          onClick={clickTologout}
+                          // type="submit"
+                          value="Log out"
+                        />
                       </div>
                     </form>
 
                     <h5 className="my-3">---------OR---------</h5>
-                    <button className="buttonStyle" onClick={signInWithGoogle}>
-                    <i class="fab fa-google color"></i> Sign In With Google
+                    <button className="buttonStyle" onClick={SignInwithPopup}>
+                      <i class="fab fa-google color"></i> Sign In With Google
                     </button>
                     <button className="buttonStyle">
-                    <i class="fab fa-facebook-f colorF"></i>  Sign In With Facebook
+                      <i class="fab fa-facebook-f colorF"></i> Sign In With
+                      Facebook
                     </button>
                   </div>
                   <div class="modal-footer">
